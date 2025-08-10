@@ -1,7 +1,7 @@
 # VideoShare (CSC 317 Final Project)
 
 **Author:** Aniket Soni  
-**SFSU Email:** your@sfsu.edu  
+**SFSU Email:** asoni@sfsu.edu  
 **App URL:** http://localhost:3000
 
 ## What it does
