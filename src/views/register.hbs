@@ -1,0 +1,25 @@
+<section class="main-card">
+  <span class="badge">Let’s do this</span>
+  <h2 style="margin-top:10px">Create your account</h2>
+  <p class="lead">Takes less than a minute.</p>
+
+  <form method="POST" action="/register" style="margin-top:16px; display:grid; gap:12px; max-width:480px">
+    <label>
+      Username
+      <input type="text" name="username" required minlength="3" maxlength="24"
+             style="width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:10px; background:var(--panel)">
+    </label>
+    <label>
+      Email
+      <input type="email" name="email" required
+             style="width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:10px; background:var(--panel)">
+    </label>
+    <label>
+      Password
+      <input type="password" name="password" required minlength="6"
+             style="width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:10px; background:var(--panel)">
+    </label>
+    <button class="btn" type="submit">Create account</button>
+    <small class="lead">Already have an account? <a href="/login">Sign in</a></small>
+  </form>
+</section>
