@@ -16,8 +16,12 @@ app.use(express.static(path.resolve("public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// expose current year for footer
-app.use((req, res, next) => { res.locals.year = new Date().getFullYear(); next(); });
+// locals for templates
+app.use((req, res, next) => {
+  res.locals.year = new Date().getFullYear();
+  res.locals.user = req.session?.user || null;
+  next();
+});
 
 app.use(session({
   secret: process.env.SESSION_SECRET || "dev_secret_change_me",

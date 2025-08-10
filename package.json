@@ -4,13 +4,19 @@
   "description": "CSC 317 Term Project - Video Management",
   "main": "src/app.js",
   "type": "module",
-  "scripts": { "start": "node src/app.js", "dev": "nodemon src/app.js" },
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
   "dependencies": {
-    "dotenv": "^16.4.5",
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^16.6.1",
     "express": "^4.19.2",
     "express-handlebars": "^7.1.2",
     "express-session": "^1.17.3",
-    "mysql2": "^3.9.7"
+    "mysql2": "^3.14.3"
   },
-  "devDependencies": { "nodemon": "^3.1.0" }
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
 }
