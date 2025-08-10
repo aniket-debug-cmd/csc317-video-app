@@ -1,7 +1,11 @@
 <section class="main-card">
-  <span class="badge">Welcome</span>
-  <h2 style="margin-top:10px">{{helloMessage}}</h2>
-  <p class="lead">Here are the latest videos.</p>
+  <span class="badge">Search</span>
+  <h2 style="margin-top:10px">Find videos</h2>
+
+  <form method="GET" action="/search" style="margin-top:12px; display:flex; gap:8px;">
+    <input type="text" name="q" value="{{q}}" placeholder="Search titles or descriptions…" style="flex:1; padding:10px 12px; border:1px solid var(--border); border-radius:10px; background:var(--panel)">
+    <button class="btn" type="submit">Search</button>
+  </form>
 </section>
 
 {{#if posts.length}}
@@ -23,5 +27,5 @@
     {{/each}}
   </section>
 {{else}}
-  <p class="lead" style="margin-top:12px">No videos yet. {{#if user}}Want to <a href="/post/new">upload one</a>?{{/if}}</p>
+  {{#if q}}<p class="lead" style="margin-top:12px">No results for “{{q}}”.</p>{{/if}}
 {{/if}}

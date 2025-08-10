@@ -1,30 +1,25 @@
 <section class="main-card">
-  <span class="badge">Let’s do this</span>
-  <h2 style="margin-top:10px">Create your account</h2>
-  <p class="lead">Takes less than a minute.</p>
-{{#if error}}
-  <div style="margin:12px 0; padding:10px 12px; border-radius:10px; background:#ffe6e6; border:1px solid #f5b5b5; color:#7a1f1f;">
-    {{error}}
-  </div>
-{{/if}}
+  <span class="badge">Hello</span>
+  <h2 style="margin-top:10px">Sign up</h2>
+  <p class="lead">Takes a minute.</p>
+
+  {{#if error}}
+    <div style="margin:12px 0; padding:10px 12px; border-radius:10px; background:#ffe6e6; border:1px solid #f5b5b5; color:#7a1f1f;">
+      {{error}}
+    </div>
+  {{/if}}
 
   <form method="POST" action="/register" style="margin-top:16px; display:grid; gap:12px; max-width:480px">
-    <label>
-      Username
-      <input type="text" name="username" required minlength="3" maxlength="24"
-             style="width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:10px; background:var(--panel)">
+    <label>Username
+      <input type="text" name="username" required minlength="3" maxlength="24" style="width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:10px; background:var(--panel)">
     </label>
-    <label>
-      Email
-      <input type="email" name="email" required
-             style="width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:10px; background:var(--panel)">
+    <label>Email
+      <input type="email" name="email" required style="width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:10px; background:var(--panel)">
     </label>
-    <label>
-      Password
-      <input type="password" name="password" required minlength="6"
-             style="width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:10px; background:var(--panel)">
+    <label>Password
+      <input type="password" name="password" required minlength="6" style="width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:10px; background:var(--panel)">
     </label>
     <button class="btn" type="submit">Create account</button>
-    <small class="lead">Already have an account? <a href="/login">Sign in</a></small>
+    <small class="lead">Already have one? <a href="/login">Log in</a></small>
   </form>
 </section>

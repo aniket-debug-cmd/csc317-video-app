@@ -1,0 +1,48 @@
+<section class="main-card">
+  <span class="badge">Now playing</span>
+  <h2 style="margin-top:10px">{{post.title}}</h2>
+  <p class="lead">by {{post.username}} · {{post.created_at}}</p>
+
+  <div style="margin-top:12px">
+    <video controls style="width:100%; border-radius:12px; border:1px solid var(--border); background:#000" poster="{{post.thumb_path}}">
+      <source src="{{post.video_path}}" type="video/mp4">
+      <source src="{{post.video_path}}" type="video/quicktime">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  {{#if post.description}}
+    <p style="margin-top:12px">{{post.description}}</p>
+  {{/if}}
+
+  <form method="POST" action="/post/{{post.id}}/like" style="margin-top:12px">
+    <button class="btn" type="submit">{{#if liked}}♥ Liked{{else}}♡ Like{{/if}} · {{likeCount}}</button>
+  </form>
+</section>
+
+<section class="main-card" style="margin-top:16px">
+  <span class="badge">Comments</span>
+
+  {{#if user}}
+    <form method="POST" action="/post/{{post.id}}/comment" style="margin-top:12px; display:grid; gap:10px;">
+      <textarea name="body" rows="3" required placeholder="Say something…" style="padding:10px 12px; border:1px solid var(--border); border-radius:10px; background:var(--panel)"></textarea>
+      <button class="btn" type="submit">Comment</button>
+    </form>
+  {{else}}
+    <p class="lead" style="margin-top:12px">Please <a href="/login">log in</a> to comment.</p>
+  {{/if}}
+
+  <div style="margin-top:16px; display:grid; gap:10px;">
+    {{#if comments.length}}
+      {{#each comments}}
+        <div style="border:1px solid var(--border); border-radius:12px; padding:10px 12px; background:var(--panel)">
+          <strong>{{this.username}}</strong>
+          <small class="lead"> · {{this.created_at}}</small>
+          <p style="margin:6px 0 0">{{this.body}}</p>
+        </div>
+      {{/each}}
+    {{else}}
+      <p class="lead">No comments yet.</p>
+    {{/if}}
+  </div>
+</section>

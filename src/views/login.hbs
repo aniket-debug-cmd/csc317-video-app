@@ -1,25 +1,22 @@
 <section class="main-card">
   <span class="badge">Welcome back</span>
-  <h2 style="margin-top:10px">Sign in</h2>
-  <p class="lead">Good to see you. Enter your details to continue.</p>
-{{#if error}}
-  <div style="margin:12px 0; padding:10px 12px; border-radius:10px; background:#ffe6e6; border:1px solid #f5b5b5; color:#7a1f1f;">
-    {{error}}
-  </div>
-{{/if}}
+  <h2 style="margin-top:10px">Log in</h2>
+  <p class="lead">Let’s get you in.</p>
+
+  {{#if error}}
+    <div style="margin:12px 0; padding:10px 12px; border-radius:10px; background:#ffe6e6; border:1px solid #f5b5b5; color:#7a1f1f;">
+      {{error}}
+    </div>
+  {{/if}}
 
   <form method="POST" action="/login" style="margin-top:16px; display:grid; gap:12px; max-width:420px">
-    <label>
-      Email
-      <input type="email" name="email" required
-             style="width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:10px; background:var(--panel)">
+    <label>Email
+      <input type="email" name="email" required style="width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:10px; background:var(--panel)">
     </label>
-    <label>
-      Password
-      <input type="password" name="password" required minlength="6"
-             style="width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:10px; background:var(--panel)">
+    <label>Password
+      <input type="password" name="password" required minlength="6" style="width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:10px; background:var(--panel)">
     </label>
-    <button class="btn" type="submit">Sign in</button>
-    <small class="lead">No account? <a href="/register">Create one</a></small>
+    <button class="btn" type="submit">Log in</button>
+    <small class="lead">New here? <a href="/register">Sign up</a></small>
   </form>
 </section>

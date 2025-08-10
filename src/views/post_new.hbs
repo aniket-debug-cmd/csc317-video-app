@@ -1,0 +1,27 @@
+<section class="main-card">
+  <span class="badge">Upload</span>
+  <h2 style="margin-top:10px">Upload a video</h2>
+  <p class="lead">Title + video required. MP4/MOV only. Thumbnail is optional.</p>
+
+  {{#if error}}
+    <div style="margin:12px 0; padding:10px 12px; border-radius:10px; background:#ffe6e6; border:1px solid #f5b5b5; color:#7a1f1f;">
+      {{error}}
+    </div>
+  {{/if}}
+
+  <form method="POST" action="/post/new" enctype="multipart/form-data" style="margin-top:16px; display:grid; gap:12px; max-width:520px">
+    <label>Title
+      <input type="text" name="title" required style="width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:10px; background:var(--panel)">
+    </label>
+    <label>Description
+      <textarea name="description" rows="3" style="width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:10px; background:var(--panel)"></textarea>
+    </label>
+    <label>Video
+      <input type="file" name="video" accept="video/mp4,video/quicktime" required>
+    </label>
+    <label>Thumbnail (optional)
+      <input type="file" name="thumb" accept="image/jpeg,image/png,image/webp">
+    </label>
+    <button class="btn" type="submit">Post</button>
+  </form>
+</section>

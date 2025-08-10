@@ -16,19 +16,20 @@ app.use(express.static(path.resolve("public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// locals for templates
-app.use((req, res, next) => {
-  res.locals.year = new Date().getFullYear();
-  res.locals.user = req.session?.user || null;
-  next();
-});
-
+// SESSION MUST COME BEFORE locals:
 app.use(session({
   secret: process.env.SESSION_SECRET || "dev_secret_change_me",
   resave: false,
   saveUninitialized: false,
   cookie: { maxAge: 1000 * 60 * 60 * 2 }
 }));
+
+// now locals can read req.session.user
+app.use((req, res, next) => {
+  res.locals.year = new Date().getFullYear();
+  res.locals.user = req.session?.user || null;
+  next();
+});
 
 app.use("/", indexRouter);
 
