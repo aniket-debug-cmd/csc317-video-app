@@ -2,6 +2,11 @@
   <span class="badge">Let’s do this</span>
   <h2 style="margin-top:10px">Create your account</h2>
   <p class="lead">Takes less than a minute.</p>
+{{#if error}}
+  <div style="margin:12px 0; padding:10px 12px; border-radius:10px; background:#ffe6e6; border:1px solid #f5b5b5; color:#7a1f1f;">
+    {{error}}
+  </div>
+{{/if}}
 
   <form method="POST" action="/register" style="margin-top:16px; display:grid; gap:12px; max-width:480px">
     <label>
